@@ -1,16 +1,14 @@
-# React + Vite
+# Anime Search App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Search for any anime using the [Jikan API](https://jikan.moe/).
 
-Currently, two official plugins are available:
+🔴 [Live Demo](https://anime-search-app-phi.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
+- Search anime by name
+- Displays title, score and cover image
+- Loading and error states
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Built With
+- React
+- Jikan API (MyAnimeList)
