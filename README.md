@@ -4,11 +4,10 @@ Search for any anime using the [Jikan API](https://jikan.moe/).
 
 🔴 [Live Demo](https://anime-search-app-phi.vercel.app/)
 
-## Features
-- Search anime by name
-- Displays title, score and cover image
-- Loading and error states
+## React Compiler
 
-## Built With
-- React
-- Jikan API (MyAnimeList)
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

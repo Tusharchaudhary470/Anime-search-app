@@ -1,25 +1,20 @@
 import { useState, useEffect } from "react";
-
+import useAnimeSearch from "./hooks/useAnimeSearch";
 function App(){
-  const [data, setData] = useState([]);
+  const [data, error, loading, searchedAnime] = useAnimeSearch();
   const [searchQuery, setSearchQuery] = useState("");
-  const[loading, setLoading] = useState(false)
-  const [error, setError] = useState(null);
+  useEffect(() => {
+ if (searchQuery !== "") {
+   const timer = setTimeout(() => {
+     searchedAnime(searchQuery)
+   }, 500)
+ 
+   return () => clearTimeout(timer)
+ } else{
+  console.log(data.length)
+ }
+}, [searchQuery])
 
-  async function searchedAnime(searchQuery){
-    setLoading(true)
-   try {
-     let result = await fetch(`https://api.jikan.moe/v4/anime?q=${searchQuery}&limit=10`);
-     let newData = await result.json()
-     setData(newData.data);
-    
-   } catch (error) {
-     setError(`error : ${error}`);
-     
-   }finally{
-    setLoading(false);
-   }
-  }
  return(
   <div className="app"> 
   <SearchAnime
@@ -47,7 +42,7 @@ function SearchAnime({searchQuery, setSearchQuery, onSearch}){
   value={searchQuery}
   onChange={(e) => setSearchQuery(e.target.value)}
   onKeyDown={(e)=> e.key == "Enter" && onSearch(searchQuery)} />
-  <button onClick={()=> onSearch(searchQuery)}> Search Anime</button>
+  
   </div>
     )
 }
@@ -67,10 +62,10 @@ function CardMaker({data, loading, error, searchQuery}){
     {data.map(anime=>
     <div 
     className="Cards"
-    key = {anime.mal_id}>
-      <img src={anime.images.jpg.image_url} alt="dynamic image" />
-      <h4>Title : "{anime.title}"</h4>
-      <h4>Score : "{anime.score}"</h4>
+    key = {anime.imdbID}>
+      <img src={ anime.Poster} alt="dynamic image" />
+      <h4>Title : "{anime.Title}"</h4>
+      <h4>Score : "{anime.Year}"</h4>
     </div>
   )}
   </div> 
