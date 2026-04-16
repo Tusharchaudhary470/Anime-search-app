@@ -12,9 +12,9 @@ function useAnimeSearch() {
   }
     setLoading(true)
    try {
-     let result = await fetch(`https://www.omdbapi.com/?s=${searchQuery}&apikey=1e8d6b4b`);
+     let result = await fetch(`https://api.jikan.moe/v4/anime?q=${searchQuery}&limit=10`);
      let newData = await result.json()
-     setData(newData.Search || []);
+     setData(newData.data);
    } catch (error) {
      setError(`error : ${error}`);
      

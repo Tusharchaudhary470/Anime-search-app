@@ -62,10 +62,10 @@ function CardMaker({data, loading, error, searchQuery}){
     {data.map(anime=>
     <div 
     className="Cards"
-    key = {anime.imdbID}>
-      <img src={ anime.Poster} alt="dynamic image" />
-      <h4>Title : "{anime.Title}"</h4>
-      <h4>Score : "{anime.Year}"</h4>
+    key = {anime.mal_id}>
+      <img src={ anime.images.jpg.image_url} alt="dynamic image" />
+      <h4>Title : "{anime.title}"</h4>
+      <h4>Score : "{anime.score}"</h4>
     </div>
   )}
   </div> 
